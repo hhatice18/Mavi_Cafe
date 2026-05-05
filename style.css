@@ -1,0 +1,314 @@
+html {
+    scroll-behavior: smooth;
+}/* ARKA PLAN: MAVİDEN PEMBEYE GEÇİŞ */
+/* ARKA PLAN: PEMBEDEN MAVİYE GEÇİŞ */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /* Renkleri tersine çevirdik: Pembe -> Açık Mavi -> Koyu Mavi */
+    background: linear-gradient(180deg, #d97b9d 0%, #f3b3c8 30%, #487095 65%, #5b8fb9 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: #444;
+}
+
+/* HEADER VE LOGO */
+/* HEADER: Logo için Ayrı Bulut */
+header {
+    background-color: transparent; 
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* LOGO ARKASINDAKİ BULUT EFEKTİ */
+.logo {
+    font-family: 'Playball', cursive;
+    text-transform: uppercase;
+    font-size: 6.5rem;
+    color: #73a1cc; /* Senin seçtiğin pastel mavi */
+    letter-spacing: 6px;
+    margin: 0;
+    
+    /* Bulut Tarzı Opak Zemin */
+    background: rgba(255, 255, 255, 0.25); /* Beyaz rengin %25 opaklığı */
+    padding: 20px 60px;
+    border-radius: 100px; /* Kenarları tam yuvarlayarak bulut formu verdik */
+    backdrop-filter: blur(8px); /* Arkadaki renk geçişini hafifçe bulanıklaştırır */
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    
+    display: inline-block;
+    transition: 0.5s;
+}
+
+/* MENÜ LİNKLERİ ARKASINDAKİ AYRI BULUT */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    
+    /* Menü için ayrı, daha ince bir bulut zemini */
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 40px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Çok ince, belli belirsiz bir sınır */
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a2d2ff;
+    transform: scale(1.1);
+}
+/* DİĞER KART VE İLETİŞİM AYARLARI AYNI KALIYOR... */
+/* SLOGAN BÖLÜMÜ (ŞERİTSİZ) */
+.hero {
+    background: transparent;
+    padding: 20px 20px 60px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* KARTLAR VE İÇERİK */
+.container { padding: 40px 8%; }
+
+.category-header { text-align: center; margin-bottom: 50px; }
+
+.section-title {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    color: #5b8fb9;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    box-shadow: 0 5px 20px rgba(236, 200, 242, 0.5);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 30px;
+    text-align: center;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+}
+
+.card:hover { transform: translateY(-12px); }
+
+.menu-resim {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.card h4 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.7rem;
+    color: #5b8fb9;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #ffafcc;
+    margin-top: 15px;
+    display: block;
+}
+
+/* İLETİŞİM BULUTU */
+.contact-cloud {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 40px;
+    border-radius: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid #d9eafa;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.contact-cloud p { font-weight: 700; margin: 15px 0; }
+
+.social-links a {
+    color: #5b8fb9;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 0 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+/* SICAK VE SOĞUK SEÇENEK BUTONLARI */
+.secenekler {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Butonlar arası boşluk */
+}
+
+.secenekler button {
+    border: none;
+    padding: 8px 22px;
+    border-radius: 25px; /* Tam yuvarlak hatlar */
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Sıcak Butonu - Üstteki Pembe Tonunla Uyumlu */
+.btn-hot { 
+    background-color: #ffafcc; 
+    color: white; 
+}
+
+.btn-hot:hover {
+    background-color: #fb8fb1; /* Üzerine gelince biraz koyulaşır */
+    transform: translateY(-3px); /* Hafifçe yukarı zıplar */
+}
+
+/* Soğuk Butonu - Logonun Yeni Pastel Mavisiyle Uyumlu */
+.btn-ice { 
+    background-color: #a2d2ff; 
+    color: white; 
+}
+
+.btn-ice:hover {
+    background-color: #89c2f7;
+    transform: translateY(-3px);
+}
+/* Kartın pozisyonunu sabitleyelim ki rozet dışarı kaçmasın */
+.card {
+    position: relative;
+    overflow: hidden; /* Rozetin fazlalıklarını keser */
+}
+
+/* Rozet Tasarımı */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: -35px; /* Köşeye çapraz yerleşim */
+    background-color: #a2d2ff; /* Pastel mavi logonla uyumlu */
+    color: white;
+    padding: 8px 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transform: rotate(45deg); /* Çapraz duruş efekti */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+/* Seçenek Grupları Konteynırı */
+.secenekler-grup {
+    padding: 0 10px 10px;
+}
+
+.secenekler-grup span {
+    font-size: 0.75rem;
+    color: #888;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Butonların Yan Yana Dizilimi */
+.secenek-butonlari {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+/* Kişi Sayısı Butonları (Mavi Tonu) */
+.btn-secenek {
+    background: white;
+    border: 1px solid #5b8fb9;
+    color: #5b8fb9;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secenek:hover {
+    background: #5b8fb9;
+    color: white;
+}
+
+/* İçerik Tercihi Butonları (Pembe Tonu) */
+.btn-hot {
+    background: white;
+    border: 1px solid #ffc1d1;
+    color: #d88a9d;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-hot:hover {
+    background: #ffc1d1;
+    color: white;
+}
