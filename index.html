@@ -1,314 +1,559 @@
 <!DOCTYPE html>
-<html lang="tr">/
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mavi Cafe | Bir Yudum Aşk</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fontlar -->
-    <link href="https://fonts.googleapis.com/css2?family=Playball&family=quikstand:ital,wght@1,600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&family=Quicksand:wght@600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="hero-foto-alan">
+        <img src="resimler/discafe.jpg" alt="Mavi Cafe Dış Görünüm" class="tam-ekran-foto">
+    </div>
+
     <header>
-        <h1 class="logo">Mavi Cafe</h1>
         <nav>
             <a href="#tatlilar">Tatlılar</a>
             <a href="#icecekler">İçecekler</a>
+            <a href="#kahvalti">Kahvaltı</a>
             <a href="#iletisim">İletişim</a>
         </nav>
     </header>
 
-   <section class="hero">
-    <h2>GÖKYÜZÜ'NÜN DERİNLİKLERİNDEN SİZE</h2>
-    <p class="slogan-alt">Mavi Cafe'nin kendine özgü tatlılarıyla bulutların üzerine çıkın.</p>
-</section>
+    <section class="hero">
+        <h2 id="adminKapisi">GÖKYÜZÜ'NÜN DERİNLİKLERİNDEN SİZE</h2>
+        <p class="slogan-alt">Mavi Cafe'nin kendine özgü tatlılarıyla bulutların üzerine çıkın.</p>
+    </section>
 
-    <!-- TATLILAR BÖLÜMÜ -->
     <section id="tatlilar" class="container">
         <div class="category-header">
             <h3 class="section-title">Aşkla Hazırlanan Tatlılar</h3>
         </div>
         <div class="menu-grid">
-            
             <div class="card">
-                <img src="tatlilar/okyanus incisi.jpg" alt="Okyanus İncisi" class="menu-resim">
+                <img src="resimler/tatlilar/okyanus incisi.jpg" alt="Okyanus İncisi" class="menu-resim">
                 <h4>Okyanus İncisi</h4>
                 <p>Yaban mersini ve beyaz çikolatanın romantik buluşması.</p>
                 <span class="price">320 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Okyanus İncisi', 320, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-    <!-- Favori Rozeti eklendi -->
-    <span class="badge">Favori</span> 
-    
-    <img src="tatlilar/lavanta isiltisi.jpg" alt="Lavanta Işıltısı" class="menu-resim">
-    <h4>Lavanta Işıltısı</h4>
-    <p>Lavantanın muhteşem aromasıyla harmanlanan mavi cafe önerisidir.</p>
-    <span class="price">310 TL</span>
-</div>
+                <span class="badge">Favori</span> 
+                <img src="resimler/tatlilar/lavanta isiltisi.jpg" alt="Lavanta Işıltısı" class="menu-resim">
+                <h4>Lavanta Işıltısı</h4>
+                <p>Lavantanın muhteşem aromasıyla harmanlanan mavi cafe önerisidir.</p>
+                <span class="price">310 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Lavanta Işıltısı', 310, this)">Sepete Ekle</button>
+            </div>
 
             <div class="card">
-                <img src="tatlilar/anlamazdin.jpg" alt="anlamazdin" class="menu-resim">
+                <img src="resimler/tatlilar/anlamazdin.jpg" alt="anlamazdin" class="menu-resim">
                 <h4>Anlamazdın</h4>
                 <p>Beyaz çikolatanın saflığı altında saklı meyve taneleriyle, anlatılamayan duyguların dile geldiği o en içten an.</p>
                 <span class="price">340 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Anlamazdın', 340, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/askin mavi hali.jpg" alt="askin mavi hali" class="menu-resim">
+                <img src="resimler/tatlilar/askin mavi hali.jpg" alt="askin mavi hali" class="menu-resim">
                 <h4>Aşkın Mavi Hali</h4>
                 <p>Beyaz çikolatanın saflığı altında saklı meyve taneleriyle, anlatılamayan duyguların dile geldiği o en içten an.</p>
                 <span class="price">325 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Aşkın Mavi Hali', 325, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/deli bal.jpg" alt="delibal" class="menu-resim">
+                <img src="resimler/tatlilar/deli bal.jpg" alt="delibal" class="menu-resim">
                 <h4>Deli Bal</h4>
                 <p>Fazlasının zarar olduğu, çocuksu bir neşe ve tutkuyla ruhunuzu sarmalayan tatlı çılgınlığı.</p>
                 <span class="price">290 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Deli Bal', 290, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/fistik soleni.jpg" alt="fistik soleni" class="menu-resim">
+                <img src="resimler/tatlilar/fistik soleni.jpg" alt="fistik soleni" class="menu-resim">
                 <h4>Fıstık Şöleni</h4>
                 <p>Toprağın en bereketli yeşil rüyası; emeğin ve gururun her zerresinde hissedildiği asil bir lezzet senfonisi.</p>
                 <span class="price">350 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Fıstık Şöleni', 350, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/fistikli sufle.jpg" alt="fistikli sufle" class="menu-resim">
+                <img src="resimler/tatlilar/fistikli sufle.jpg" alt="fistikli sufle" class="menu-resim">
                 <h4>Fıstıklı Sufle</h4>
                 <p>Kalbi sadece sizin için çarpan bir sevda gibi; içinden taşan o sıcacık akışkan şefkatiyle tüm dünyayı unutturan bir kucaklaşma.</p>
                 <span class="price">340 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Fıstıklı Sufle', 340, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/ilk yagmur.jpg" alt="ilk yagmur" class="menu-resim">
+                <img src="resimler/tatlilar/ilk yagmur.jpg" alt="ilk yagmur" class="menu-resim">
                 <h4>İlk Yağmur</h4>
-                <p>Gökyüzünün yeryüzüne taze bir nefes hediyesi gibi; narin çiçekler ve ferah dokusuyla ruhunuzda umudu yeşerten o duru bekleyiş.</p>
+                <p>Gökyüzünün yeryüzüne taze bir nefes hediyesi gibi; narin çiçekler ve ferah dokusuyla ruhunuzu umudu yeşerten o duru bekleyiş.</p>
                 <span class="price">320 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('İlk Yağmur', 320, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/mavi vadi.jpg" alt="mavi vadi" class="menu-resim">
+                <img src="resimler/tatlilar/mavi vadi.jpg" alt="mavi vadi" class="menu-resim">
                 <h4>Mavi Vadi</h4>
                 <p>Yaban mersini bahçelerinin dingin huzurunu tabağınıza taşıyan, zamanın durduğu o en sessiz ve derin kaçamak.</p>
                 <span class="price">330 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Mavi Vadi', 330, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/mavinin buyusu.jpg" alt="mavinin buyusu" class="menu-resim">
+                <img src="resimler/tatlilar/mavinin buyusu.jpg" alt="mavinin buyusu" class="menu-resim">
                 <h4>Mavinin Büyüsü</h4>
                 <p>Gizemli gece göğünü andıran derinliğiyle, ruhunuzu bir bakışta kendi büyülü dünyasına çeken eşsiz bir davet.</p>
                 <span class="price">325 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Mavinin Büyüsü', 325, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/unutma beni.jpg" alt="unutma beni" class="menu-resim">
+                <img src="resimler/tatlilar/unutma beni.jpg" alt="unutma beni" class="menu-resim">
                 <h4>Unutma Beni</h4>
                 <p>Narin çiçeklerin masumiyetiyle süslenmiş, her lokmasında sevginin ve vefanın en tatlı izini bırakan bir hatıra.</p>
                 <span class="price">335 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Unutma Beni', 335, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="tatlilar/mavinin dondurması.jpg" alt="mavinin dondurması" class="menu-resim">
+                <img src="resimler/tatlilar/mavinin dondurması.jpg" alt="mavinin dondurması" class="menu-resim">
                 <h4>Blue İce Cream</h4>
-                <p>Ruhun mavisi, lezzetin büyüsü, hayatın tadı, doğanın dokunuşu.</p>
+                <p>Ruhun mavisi, lezzetin büyüsü, hayatın tadı, doğanın dokunušu.</p>
                 <span class="price">270 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Blue Ice Cream', 270, this)">Sepete Ekle</button>
             </div>
-
         </div>
     </section>
 
-    <!-- İÇECEKLER BÖLÜMÜ -->
     <section id="icecekler" class="container">
         <div class="category-header">
             <h3 class="section-title">İçeceklerimiz</h3>
         </div>
         <div class="menu-grid">
-            
             <div class="card">
-                <img src="icecekler/latte.jpg" alt="latte" class="menu-resim">
+                <img src="resimler/icecekler/latte.jpg" alt="latte" class="menu-resim">
                 <h4>Latte</h4>
-                <div class="secenekler">
-                    <button class="btn-hot">Hot</button>
-                    <button class="btn-ice">Ice</button>
+                <div class="secenek-butonlari">
+                    <button type="button" class="btn-hot" onclick="secimYap(this)">Hot</button>
+                    <button type="button" class="btn-ice" onclick="secimYap(this)">Ice</button>
                 </div>
                 <span class="price">185 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Latte', 185, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="icecekler/americano.jpg" alt="Americano" class="menu-resim">
+                <img src="resimler/icecekler/americano.jpg" alt="Americano" class="menu-resim">
                 <h4>Americano</h4>
-                <div class="secenekler">
-                    <button class="btn-hot">Hot</button>
-                    <button class="btn-ice">Ice</button>
+                <div class="secenek-butonlari">
+                    <button type="button" class="btn-hot" onclick="secimYap(this)">Hot</button>
+                    <button type="button" class="btn-ice" onclick="secimYap(this)">Ice</button>
                 </div>
                 <span class="price">180 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Americano', 180, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="icecekler/mocha.jpg" alt="mocha" class="menu-resim">
+                <img src="resimler/icecekler/mocha.jpg" alt="mocha" class="menu-resim">
                 <h4>Mocha</h4>
-                <div class="secenekler">
-                    <button class="btn-hot">Hot</button>
-                    <button class="btn-ice">Ice</button>
+                <div class="secenek-butonlari">
+                    <button type="button" class="btn-hot" onclick="secimYap(this)">Hot</button>
+                    <button type="button" class="btn-ice" onclick="secimYap(this)">Ice</button>
                 </div>
                 <span class="price">185 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Mocha', 185, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="icecekler/turk_kahvesi.jpg" alt="turk_kahvesi" class="menu-resim">
+                <img src="resimler/icecekler/turk_kahvesi.jpg" alt="turk_kahvesi" class="menu-resim">
                 <h4>Türk Kahvesi</h4>
-                <div class="secenekler">
-                    <button class="btn-hot">koyu</button>
-                    <button class="btn-ice">orta</button>
+                <div class="secenek-butonlari">
+                    <button type="button" class="btn-hot" onclick="secimYap(this)">Koyu</button>
+                    <button type="button" class="btn-ice" onclick="secimYap(this)">Orta</button>
                 </div>
                 <span class="price">90 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Türk Kahvesi', 90, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="icecekler/filtre_kahve.jpg" alt="filtre_kahve" class="menu-resim">
+                <img src="resimler/icecekler/filtre_kahve.jpg" alt="filtre_kahve" class="menu-resim">
                 <h4>Filtre Kahve</h4>
                 <span class="price">120 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Filtre Kahve', 120, this)">Sepete Ekle</button>
             </div>
 
-             <div class="card">
-                <img src="icecekler/cay.jpg" alt="cay" class="menu-resim">
+            <div class="card">
+                <img src="resimler/icecekler/cay.jpg" alt="cay" class="menu-resim">
                 <h4>Çay</h4>
                 <span class="price">50 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Çay', 50, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="icecekler/cappuccino.jpg" alt="cappuccino" class="menu-resim">
+                <img src="resimler/icecekler/cappuccino.jpg" alt="cappuccino" class="menu-resim">
                 <h4>Cappuccino</h4>
                 <span class="price">185 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Cappuccino', 185, this)">Sepete Ekle</button>
             </div>
 
             <div class="card">
-                <img src="icecekler/gokyuzu_frozen.jpg" alt="gokyuzu_frozen" class="menu-resim">
+                <img src="resimler/icecekler/gokyuzu_frozen.jpg" alt="gokyuzu_frozen" class="menu-resim">
                 <h4>Gökyüzü Frozen</h4>
                 <p>Mavinin gizemli serinleten lezzeti.</p>
                 <span class="price">140 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Gökyüzü Frozen', 140, this)">Sepete Ekle</button>
             </div>
-
         </div>
     </section>
 
     <section id="kahvalti" class="container">
-    <div class="category-header">
-        <h3 class="section-title">Güne Merhaba Kahvaltıları</h3>
+        <div class="category-header">
+            <h3 class="section-title">Güne Merhaba Kahvaltıları</h3>
+        </div>
+        <div class="menu-grid">
+            <div class="card" data-baz-fiyat="475">
+                <img src="resimler/kahvalti/serpme.jpg" alt="Mavi Liman Serpmesi" class="menu-resim">
+                <h4>Mavi Liman Serpmesi</h4>
+                <p>Gaziantep rüzgarını masanıza taşıyan dev şölen.</p>
+                <div class="secenekler-grup">
+                    <span>Kişi Sayısı:</span>
+                    <div class="secenek-butonlari">
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="2">2 Kişilik</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="3">3 Kişilik</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="4">4 Kişilik</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="5">+5 Kişilik</button>
+                    </div>
+                </div>
+                <span class="price">950 TL'den başlayan fiyatlarla</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Mavi Liman Serpmesi', 950, this)">Sepete Ekle</button>
+            </div>
+
+            <div class="card" data-baz-fiyat="280">
+                <img src="resimler/kahvalti/pankek.jpg" alt="Pankek Kulesi" class="menu-resim">
+                <h4>Pankek Kulesi</h4>
+                <p>Pofuduk pankeklerin tatlı yükselişi.</p>
+                <div class="secenekler-grup">
+                    <span>Tercih:</span>
+                    <div class="secenek-butonlari">
+                        <button type="button" class="btn-hot" onclick="secimYap(this)">Ballı-Tereyağlı</button>
+                        <button type="button" class="btn-hot" onclick="secimYap(this)">Çikolatalı</button>
+                    </div>
+                    <span>Kişi Sayısı:</span>
+                    <div class="secenek-butonlari">
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="1">1 Kişi</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="2">2 Kişi</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="3">3 Kişi</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="4">+4 Kişi</button>
+                    </div>
+                </div>
+                <span class="price">280 TL'den başlayan fiyatlarla</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Pankek Kulesi', 280, this)">Sepete Ekle</button>
+            </div>
+
+            <div class="card" data-baz-fiyat="250">
+                <img src="resimler/kahvalti/firin.jpg" alt="Mavi Fırın" class="menu-resim">
+                <h4>Mavi Fırın</h4>
+                <p>Taptaze simit, poğaça ve börek çeşitleri.</p>
+                <div class="secenekler-grup">
+                    <span>Kişi Sayısı:</span>
+                    <div class="secenek-butonlari">
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="1">1 Kişilik</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="2">2 Kişilik</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="3">3 Kişilik</button>
+                        <button type="button" class="btn-secenek" onclick="secimYap(this)" data-carpan="4">+4 Kişilik</button>
+                    </div>
+                </div>
+                <span class="price">250 TL'den başlayan fiyatlarla</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Mavi Fırın', 250, this)">Sepete Ekle</button>
+            </div>
+
+            <div class="card">
+                <img src="resimler/kahvalti/limantabak.jpg" alt="Mavi Liman Tabağı" class="menu-resim">
+                <h4>Mavi Liman Tabağı</h4>
+                <p>Sucuklu yumurta, menemen ve taze çay ile tek kişilik zengin tabak.</p>
+                <span class="price">450 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Mavi Liman Tabağı', 450, this)">Sepete Ekle</button>
+            </div>
+
+            <div class="card">
+                <img src="resimler/kahvalti/tuzlukruvasan.jpg" alt="Tuzlu" class="menu-resim">
+                <h4>Tuzlu Kruvasan</h4>
+                <p>Avokado ve füme et eşliğinde.</p>
+                <span class="price">235 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Tuzlu Kruvasan', 235, this)">Sepete Ekle</button>
+            </div>
+
+            <div class="card">
+                <img src="resimler/kahvalti/cileklikruvasan.jpg" alt="Çilekli" class="menu-resim">
+                <h4>Çilekli Kruvasan</h4>
+                <p>Pastacı kreması ve taze çilek.</p>
+                <span class="price">220 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Çilekli Kruvasan', 220, this)">Sepete Ekle</button>
+            </div>
+
+            <div class="card">
+                <img src="resimler/kahvalti/yabanmersinlikruvasan.jpg" alt="Yaban Mersinli" class="menu-resim">
+                <h4>Yaban Mersinli Kruvasan</h4>
+                <p>Beyaz çikolata ve yaban mersini.</p>
+                <span class="price">220 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Yaban Mersinli Kruvasan', 220, this)">Sepete Ekle</button>
+            </div>
+
+            <div class="card">
+                <img src="resimler/kahvalti/bowl.jpg" alt="Rüya Bowl" class="menu-resim">
+                <h4>Rüya Bowl</h4>
+                <p>Chia tohumlu ve meyveli sağlıklı kase.</p>
+                <span class="price">200 TL</span>
+                <button class="sepete-ekle" onclick="sepeteEkle('Rüya Bowl', 200, this)">Sepete Ekle</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="container">
+        <div class="category-header">
+            <h3 class="section-title">Bize Ulaşın</h3>
+        </div>
+        <div class="contact-cloud">
+            <p>📍 Bulut Mahallesi, Gökyüzü Caddesi No: 18, İskenderun</p>
+            <p>📞 +90 555 000 00 00</p>
+            <p>✉️ merhaba@mavicafe.com</p>
+            <div class="social-links">
+                <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="sepet-panel">
+        <button onclick="sepetiAc()">Sepetim</button>
     </div>
+
+    <div id="sepetModal" class="sepet-modal">
+        <div class="sepet-icerik">
+            <h2>Sepetim</h2>
+            <ul id="sepetListesi"></ul>
+            <h3 id="toplamTutar">Toplam: 0 TL</h3>
+            
+            <textarea id="siparisNotu" placeholder="Sipariş notu yazın..."></textarea>
+
+            <div class="sepet-masa-secim">
+                <label for="masaSec">Lütfen Masanızı Seçin:</label>
+                <select id="masaSec">
+                    <option value="">Masa Seçiniz</option>
+                    <option value="1">Masa 1</option>
+                    <option value="2">Masa 2</option>
+                    <option value="3">Masa 3</option>
+                    <option value="4">Masa 4</option>
+                    <option value="5">Masa 5</option>
+                    <option value="6">Masa 6</option>
+                    <option value="7">Masa 7</option>
+                    <option value="8">Masa 8</option>
+                    <option value="10">Masa 10</option>
+                </select>
+            </div>
+
+            <div class="sepet-buton-grubu">
+                <button onclick="siparisiGonder()" class="btn-sepet-aksiyon">Siparişi Gönder</button>
+                <button onclick="hesapIste()" class="btn-sepet-aksiyon btn-hesap-iste">Hesap İste</button>
+                <button onclick="sepetiKapat()" class="btn-sepet-aksiyon btn-kapat">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+let sepet = [];
+
+// Seçim yapıldığında butonların active olmasını sağlayan fonksiyon
+function secimYap(btn) {
+    const ebeveyn = btn.parentElement;
+    ebeveyn.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+}
+
+// Gelişmiş Dinamik Sepete Ekleme Fonksiyonu (YENİ BİLDİRİM SİSTEMLİ)
+function sepeteEkle(ad, varsayilanFiyat, butonElement){
+    let secilenOzellikler = [];
+    let nihaiFiyat = varsayilanFiyat;
+
+    if (butonElement) {
+        const kart = butonElement.closest(".card");
+        if (kart) {
+            const aktifButonlar = kart.querySelectorAll("button.active");
+            let bazFiyat = kart.getAttribute("data-baz-fiyat");
+
+            aktifButonlar.forEach(b => {
+                secilenOzellikler.push(b.innerText);
+                
+                let carpan = b.getAttribute("data-carpan");
+                if (bazFiyat && carpan) {
+                    nihaiFiyat = Number(bazFiyat) * Number(carpan);
+                }
+            });
+            
+            // ESKİ ALERT YERİNE: Kişi sayısı seçilmediğinde de yeni mavi bildirim devrede!
+            if (bazFiyat && aktifButonlar.length === 0 && kart.querySelectorAll(".secenek-butonlari button[data-carpan]").length > 0) {
+                bildirimGoster("Lütfen kişi sayısını seçiniz!");
+                return;
+            }
+        }
+    }
+
+    let nihaiUrunAdi = ad;
+    if (secilenOzellikler.length > 0) {
+        nihaiUrunAdi = `${ad} (${secilenOzellikler.join(" - ")})`;
+    }
+
+    sepet.push({
+        ad: nihaiUrunAdi,
+        fiyat: nihaiFiyat
+    });
+
+    bildirimGoster("Seçiminiz sepete eklendi");
     
-    <div class="menu-grid">
-        <div class="card">
-            <img src="kahvalti/serpme.jpg" alt="Mavi Liman Serpmesi" class="menu-resim">
-            <h4>Mavi Liman Serpmesi</h4>
-            <p>Gaziantep rüzgarını masanıza taşıyan dev şölen.</p>
-            <div class="secenekler-grup">
-                <span>Kişi Sayısı:</span>
-                <div class="secenek-butonlari">
-                    <button class="btn-secenek">2</button>
-                    <button class="btn-secenek">3</button>
-                    <button class="btn-secenek">4</button>
-                    <button class="btn-secenek">+5</button>
-                </div>
-            </div>
-            <span class="price">950 TL' den baslayan fiyatlarla</span>
-        </div>
+    if (butonElement) {
+        const kart = butonElement.closest(".card");
+        if(kart) {
+            kart.querySelectorAll("button.active").forEach(b => b.classList.remove("active"));
+        }
+    }
+}
 
-        <div class="card">
-            <img src="kahvalti/pankek.jpg" alt="Pankek Kulesi" class="menu-resim">
-            <h4>Pankek Kulesi</h4>
-            <p>Pofuduk pankeklerin tatlı yükselişi.</p>
-            <div class="secenekler-grup">
-                <span>Tercih:</span>
-                <div class="secenek-butonlari">
-                    <button class="btn-hot">Ballı-Tereyağlı</button>
-                    <button class="btn-hot">Çikolatalı</button>
-                </div>
-                <span>Kişi Sayısı:</span>
-                <div class="secenek-butonlari">
-                    <button class="btn-secenek">1</button>
-                    <button class="btn-secenek">2</button>
-                    <button class="btn-secenek">3</button>
-                    <button class="btn-secenek">4</button>
-                </div>
-            </div>
-            <span class="price">280TL' den başlayan fiyatlarla</span>
-        </div>
+// Yeni Bildirim Oluşturma ve Kendi Kendine Silme Fonksiyonu (Mavi Bulut)
+function bildirimGoster(mesaj) {
+    let eskiBildirim = document.querySelector(".sepet-bildirim");
+    if(eskiBildirim) { eskiBildirim.remove(); }
 
-        <div class="card">
-            <img src="kahvalti/firin.jpg" alt="Mavi Fırın" class="menu-resim">
-            <h4>Mavi Fırın</h4>
-            <p>Taptaze simit, poğaça ve börek çeşitleri.</p>
-            <div class="secenekler-grup">
-                <span>Kişi Sayısı:</span>
-                <div class="secenek-butonlari">
-                    <button class="btn-secenek">1</button>
-                    <button class="btn-secenek">2</button>
-                    <button class="btn-secenek">3</button>
-                    <button class="btn-secenek">+4</button>
-                </div>
-            </div>
-            <span class="price">250 TL' den başlayan fiyatlarla</span>
-        </div>
+    const toast = document.createElement("div");
+    toast.className = "sepet-bildirim";
+    toast.innerText = mesaj;
+    document.body.appendChild(toast);
 
-        
-        <div class="card">
-            <img src="kahvalti/limantabak.jpg" alt="Mavi Liman Tabağı" class="menu-resim">
-            <h4>Mavi Liman Tabağı</h4>
-            <p>Sucuklu yumurta, menemen ve taze çay ile tek kişilik zengin tabak.</p>
-            <span class="price">450 TL</span>
-        </div>
-        
-        <div class="card">
-            <img src="kahvalti/tuzlukruvasan.jpg" alt="Tuzlu" class="menu-resim">
-            <h4>Tuzlu Kruvasan</h4>
-            <p>Avokado ve füme et eşliğinde.</p>
-            <span class="price">235 TL</span>
-        </div>
+    setTimeout(() => {
+        toast.classList.add("goster");
+    }, 50);
 
-        <div class="card">
-            <img src="kahvalti/cileklikruvasan.jpg" alt="Çilekli" class="menu-resim">
-            <h4>Çilekli Kruvasan</h4>
-            <p>Pastacı kreması ve taze çilek.</p>
-            <span class="price">220 TL</span>
-        </div>
+    setTimeout(() => {
+        toast.classList.remove("goster");
+        setTimeout(() => { toast.remove(); }, 400);
+    }, 2500); // Kullanıcı rahat okusun diye süreyi 2.5 saniyeye çektim
+}
 
-        <div class="card">
-            <img src="kahvalti/yabanmersinlikruvasan.jpg" alt="Yaban Mersinli" class="menu-resim">
-            <h4>Yaban Mersinli Kruvasan</h4>
-            <p>Beyaz çikolata ve yaban mersini.</p>
-            <span class="price">220TL</span>
-        </div>
+function sepetiAc(){
+    const liste = document.getElementById("sepetListesi");
+    const toplamYazi = document.getElementById("toplamTutar");
+    liste.innerHTML = "";
+    let toplam = 0;
 
-        <div class="card">
-            <img src="kahvalti/bowl.jpg" alt="Rüya Bowl" class="menu-resim">
-            <h4>Rüya Bowl</h4>
-            <p>Chia tohumlu ve meyveli sağlıklı kase.</p>
-            <span class="price">200 TL</span>
-        </div>
-    </div>
-</section>
+    sepet.forEach((u)=>{
+        toplam += u.fiyat;
+        liste.innerHTML += `<li>${u.ad} - ${u.fiyat} TL</li>`;
+    });
 
- <section id="iletisim" class="container">
-    <div class="category-header">
-        <h3 class="section-title">Bize Ulaşın</h3>
-    </div>
+    toplamYazi.innerText = "Toplam: " + toplam + " TL";
+    document.getElementById("sepetModal").style.display = "block";
+}
+
+function sepetiKapat(){
+    document.getElementById("sepetModal").style.display = "none";
+}
+
+function siparisiGonder(){
+    const masa = document.getElementById("masaSec").value;
     
-    <!-- Metinleri içine alan bulut kutusu -->
-    <div class="contact-cloud">
-        <p>📍 Bulut Mahallesi, Gökyüzü Caddesi No: 18, İskenderun</p>
-        <p>📞 +90 555 000 00 00</p>
-        <p>✉️ merhaba@mavicafe.com</p>
-        <div class="social-links">
-            <a href="#">Instagram</a> | <a href="#">Twitter</a>
-        </div>
-    </div>
-</section>
+    // ESKİ ALERT YERİNE MAVİ BİLDİRİM
+    if(!masa){
+        bildirimGoster("Lütfen önce masanızı seçin!");
+        return;
+    }
+    if(sepet.length === 0) {
+        bildirimGoster("Sepetiniz boş, sipariş gönderilemez!");
+        return;
+    }
 
+    const not = document.getElementById("siparisNotu").value;
+    let siparisler = JSON.parse(localStorage.getItem("siparisler")) || {};
+    const simdi = new Date();
+    const saatMetni = simdi.getHours().toString().padStart(2, '0') + ":" + simdi.getMinutes().toString().padStart(2, '0');
+
+    siparisler[masa] = {
+        masa: masa,
+        urunler: sepet,
+        not: not,
+        zaman: saatMetni,
+        tip: "siparis"
+    };
+
+    localStorage.setItem("siparisler", JSON.stringify(siparisler));
+    
+    // ESKİ ALERT YERİNE MAVİ BİLDİRİM
+    bildirimGoster("Siparişiniz başarıyla gönderildi!");
+    
+    sepet = [];
+    document.getElementById("siparisNotu").value = "";
+    document.getElementById("masaSec").value = "";
+    sepetiKapat();
+}
+
+function hesapIste() {
+    const masa = document.getElementById("masaSec").value;
+    
+    // ESKİ ALERT YERİNE MAVİ BİLDİRİM
+    if(!masa){
+        bildirimGoster("Lütfen önce masa numaranızı seçin!");
+        return;
+    }
+
+    let siparisler = JSON.parse(localStorage.getItem("siparisler")) || {};
+    const simdi = new Date();
+    const saatMetni = simdi.getHours().toString().padStart(2, '0') + ":" + simdi.getMinutes().toString().padStart(2, '0');
+
+    let mevcutUrunler = siparisler[masa] ? siparisler[masa].urunler : [];
+    let mevcutNot = siparisler[masa] ? siparisler[masa].not : "Sadece hesap istiyor.";
+
+    siparisler[masa] = {
+        masa: masa,
+        urunler: mevcutUrunler,
+        not: mevcutNot,
+        zaman: saatMetni,
+        tip: "hesap"
+    };
+
+    localStorage.setItem("siparisler", JSON.stringify(siparisler));
+    
+    // ESKİ ALERT YERİNE MAVİ BİLDİRİM
+    bildirimGoster("Hesap isteğiniz garsona iletildi!");
+    
+    sepet = [];
+    document.getElementById("masaSec").value = "";
+    sepetiKapat();
+}
+</script>
+
+<script>
+// Admin Giriş Kapısı (Slogana 3 Saniye Basılı Tutma)
+document.addEventListener("DOMContentLoaded", function(){
+    const adminKapisi = document.getElementById("adminKapisi");
+    let adminTimer;
+
+    adminKapisi.addEventListener("mousedown", function(){
+        adminTimer = setTimeout(function(){
+            window.location.href = "admin.html";
+        }, 3000);
+    });
+    adminKapisi.addEventListener("mouseup", function(){ clearTimeout(adminTimer); });
+    adminKapisi.addEventListener("mouseleave", function(){ clearTimeout(adminTimer); });
+
+    adminKapisi.addEventListener("touchstart", function(){
+        adminTimer = setTimeout(function(){
+            window.location.href = "admin.html";
+        }, 3000);
+    });
+    adminKapisi.addEventListener("touchend", function(){ clearTimeout(adminTimer); });
+});
+</script>
 </body>
-</html>  
-
+</html>
