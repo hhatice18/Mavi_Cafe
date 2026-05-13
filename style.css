@@ -1,65 +1,64 @@
+/* ==========================================================================
+   MAVİ CAFE - GENEL AYARLAR VE ARKA PLAN
+   ========================================================================== */
 html {
     scroll-behavior: smooth;
-}/* ARKA PLAN: MAVİDEN PEMBEYE GEÇİŞ */
-/* ARKA PLAN: PEMBEDEN MAVİYE GEÇİŞ */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    /* Renkleri tersine çevirdik: Pembe -> Açık Mavi -> Koyu Mavi */
-    background: linear-gradient(180deg, #d97b9d 0%, #f3b3c8 30%, #487095 65%, #5b8fb9 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    /* Geçişli arka plan kaldırıldı, tamamen net ve sabit #487095 rengi yapıldı */
+    background-color: #487095;
     min-height: 100vh;
-    color: #444;
+    color: #ffffff;
+}
+/* ==========================================================================
+   YENİ: EKRAI TAM KAPLAYAN VE ALTA DOĞRU ERİYEN FOTOĞRAF ALANI
+   ========================================================================== */
+.hero-foto-alan {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
 }
 
-/* HEADER VE LOGO */
-/* HEADER: Logo için Ayrı Bulut */
+.tam-ekran-foto {
+    width: 100%; /* Ekran genişliğine tam oturur */
+    height: auto; /* 1280x715 oranını ve fotoğrafın tamamını kusursuz korur */
+    display: block;
+    
+    /* SİHİRLİ DOKUNUŞ: Fotoğraf %95'ine kadar tamamen orijinal netliğinde kalır, sadece en dipteki %5'lik kısım şeffaflaşır */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+}
+
+/* ==========================================================================
+   HEADER VE NAVİGASYON
+   ========================================================================== */
 header {
-    background-color: transparent; 
-    padding: 40px 20px;
+    background-color: transparent;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-top: -30px; /* Fotoğrafa hafifçe yaklaşması için */
 }
 
-/* LOGO ARKASINDAKİ BULUT EFEKTİ */
-.logo {
-    font-family: 'Playball', cursive;
-    text-transform: uppercase;
-    font-size: 6.5rem;
-    color: #73a1cc; /* Senin seçtiğin pastel mavi */
-    letter-spacing: 6px;
-    margin: 0;
-    
-    /* Bulut Tarzı Opak Zemin */
-    background: rgba(255, 255, 255, 0.25); /* Beyaz rengin %25 opaklığı */
-    padding: 20px 60px;
-    border-radius: 100px; /* Kenarları tam yuvarlayarak bulut formu verdik */
-    backdrop-filter: blur(8px); /* Arkadaki renk geçişini hafifçe bulanıklaştırır */
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-    
-    display: inline-block;
-    transition: 0.5s;
-}
-
-/* MENÜ LİNKLERİ ARKASINDAKİ AYRI BULUT */
 nav {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 30px;
-    
-    /* Menü için ayrı, daha ince bir bulut zemini */
     background: rgba(255, 255, 255, 0.15);
     padding: 10px 40px;
     border-radius: 50px;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Çok ince, belli belirsiz bir sınır */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 nav a {
@@ -77,32 +76,50 @@ nav a:hover {
     color: #a2d2ff;
     transform: scale(1.1);
 }
-/* DİĞER KART VE İLETİŞİM AYARLARI AYNI KALIYOR... */
-/* SLOGAN BÖLÜMÜ (ŞERİTSİZ) */
+
+/* ==========================================================================
+   SLOGAN ALANI (Slogana Basılı Tutarak Admin Paneline Giriş)
+   ========================================================================== */
 .hero {
     background: transparent;
-    padding: 20px 20px 60px 20px;
+    padding: 30px 20px 40px 20px;
     text-align: center;
 }
 
-.hero h2 {
+#adminKapisi {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 2.8rem;
     color: #ffffff;
     margin-bottom: 10px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-.hero p {
+#adminKapisi:active {
+    transform: scale(0.97); /* Basılı tutulduğunda basılma hissi verir */
+    color: #a2d2ff;
+}
+
+.slogan-alt {
     font-size: 1.2rem;
     color: #ffffff;
 }
 
-/* KARTLAR VE İÇERİK */
-.container { padding: 40px 8%; }
+/* ==========================================================================
+   MENÜ KARTLARI VE KATEGORİLER
+   ========================================================================== */
+.container { 
+    padding: 40px 8%; 
+}
 
-.category-header { text-align: center; margin-bottom: 50px; }
+.category-header { 
+    text-align: center; 
+    margin-bottom: 50px; 
+}
 
 .section-title {
     background-color: rgba(255, 255, 255, 0.9);
@@ -130,9 +147,14 @@ nav a:hover {
     border: none;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    color: #444;
 }
 
-.card:hover { transform: translateY(-12px); }
+.card:hover { 
+    transform: translateY(-12px); 
+}
 
 .menu-resim {
     width: 100%;
@@ -165,44 +187,37 @@ nav a:hover {
     display: block;
 }
 
-/* İLETİŞİM BULUTU */
-.contact-cloud {
-    background-color: rgba(255, 255, 255, 0.25);
-    padding: 40px;
-    border-radius: 50px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    border: 2px solid #d9eafa;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-}
-
-.contact-cloud p { font-weight: 700; margin: 15px 0; }
-
-.social-links a {
-    color: #5b8fb9;
-    text-decoration: none;
-    font-weight: 800;
-    padding: 0 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
+/* Favori Rozeti */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: -35px;
+    background-color: #a2d2ff;
     color: white;
+    padding: 8px 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
-/* SICAK VE SOĞUK SEÇENEK BUTONLARI */
+
+/* ==========================================================================
+   İÇECEK VE KAHVALTI SEÇENEK BUTONLARI
+   ========================================================================== */
 .secenekler {
     margin: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Butonlar arası boşluk */
+    gap: 15px;
 }
 
 .secenekler button {
     border: none;
     padding: 8px 22px;
-    border-radius: 25px; /* Tam yuvarlak hatlar */
+    border-radius: 25px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -213,50 +228,6 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Sıcak Butonu - Üstteki Pembe Tonunla Uyumlu */
-.btn-hot { 
-    background-color: #ffafcc; 
-    color: white; 
-}
-
-.btn-hot:hover {
-    background-color: #fb8fb1; /* Üzerine gelince biraz koyulaşır */
-    transform: translateY(-3px); /* Hafifçe yukarı zıplar */
-}
-
-/* Soğuk Butonu - Logonun Yeni Pastel Mavisiyle Uyumlu */
-.btn-ice { 
-    background-color: #a2d2ff; 
-    color: white; 
-}
-
-.btn-ice:hover {
-    background-color: #89c2f7;
-    transform: translateY(-3px);
-}
-/* Kartın pozisyonunu sabitleyelim ki rozet dışarı kaçmasın */
-.card {
-    position: relative;
-    overflow: hidden; /* Rozetin fazlalıklarını keser */
-}
-
-/* Rozet Tasarımı */
-.badge {
-    position: absolute;
-    top: 15px;
-    right: -35px; /* Köşeye çapraz yerleşim */
-    background-color: #a2d2ff; /* Pastel mavi logonla uyumlu */
-    color: white;
-    padding: 8px 40px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    transform: rotate(45deg); /* Çapraz duruş efekti */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-}
-/* Seçenek Grupları Konteynırı */
 .secenekler-grup {
     padding: 0 10px 10px;
 }
@@ -270,7 +241,6 @@ footer {
     text-transform: uppercase;
 }
 
-/* Butonların Yan Yana Dizilimi */
 .secenek-butonlari {
     display: flex;
     justify-content: center;
@@ -279,36 +249,283 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Kişi Sayısı Butonları (Mavi Tonu) */
-.btn-secenek {
-    background: white;
-    border: 1px solid #5b8fb9;
-    color: #5b8fb9;
-    padding: 4px 10px;
+.btn-secenek, .btn-hot, .btn-ice {
+    background: white !important;
+    border: 1px solid #5b8fb9 !important;
+    color: #5b8fb9 !important;
+    padding: 6px 14px;
     border-radius: 8px;
     font-size: 0.8rem;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: bold;
 }
 
-.btn-secenek:hover {
-    background: #5b8fb9;
-    color: white;
-}
-
-/* İçerik Tercihi Butonları (Pembe Tonu) */
 .btn-hot {
-    background: white;
-    border: 1px solid #ffc1d1;
-    color: #d88a9d;
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: 0.3s;
+    border: 1px solid #ffc1d1 !important;
+    color: #d88a9d !important;
 }
 
-.btn-hot:hover {
-    background: #ffc1d1;
+/* Tıklanan Seçenek Butonunun Aktif Parlama Hali */
+.secenekler button.active, 
+.secenek-butonlari button.active {
+    background: linear-gradient(135deg, #72d7ff, #b1d1f4) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(0, 119, 255, 0.4);
+    border-color: transparent !important;
+}
+
+.sepete-ekle {
+    margin-top: 14px;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6ecbff, #b1d1f4);
     color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0, 119, 255, 0.25);
+    transition: .25s ease;
+}
+
+.sepete-ekle:hover { transform: translateY(-2px); }
+.sepete-ekle:active { transform: scale(.96); }
+
+/* ==========================================================================
+   SEPETİM PANELİ VE MODAL TASARIMI
+   ========================================================================== */
+.sepet-panel {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+}
+
+.sepet-panel button {
+    padding: 15px 24px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #72d7ff, #b1d1f4);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 119, 255, .35);
+    transition: .25s ease;
+}
+
+.sepet-panel button:hover { transform: translateY(-3px); }
+
+.sepet-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    animation: fadeIn .25s ease;
+}
+
+/* ==========================================================================
+   GÜNCELLENDİ: TAŞMAYAN VE İÇİNDE KAYAN SEPET KUTUSU
+   ========================================================================== */
+.sepet-icerik {
+    width: 90%;
+    max-width: 430px;
+    margin: 30px auto; /* Yukarıdan boşluğu biraz azalttık ki ekrana daha iyi otursun */
+    padding: 25px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    color: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .35);
+    font-family: 'Poppins', sans-serif;
+    animation: popup .25s ease;
+
+    /* SİHİRLİ DOKUNUŞLAR: Ekran boyutuna göre kendini sınırlar ve taşmayı önler */
+    max-height: 85vh; /* Ekran yüksekliğinin %85'inden fazla büyümez */
+    overflow-y: auto;  /* Ürünler çoğalınca sepetin kendi içinde kaydırma çubuğu çıkar */
+}
+
+.sepet-icerik h2 {
+    margin-bottom: 18px;
+    font-size: 28px;
+}
+
+.sepet-icerik ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.sepet-icerik li {
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+.sepet-icerik h3 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #7ddcff;
+}
+
+.sepet-masa-secim {
+    margin: 15px 0 25px 0;
+    text-align: left;
+}
+
+.sepet-masa-secim label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #7ddcff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sepet-masa-secim select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #487095;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    font-size: 15px;
+}
+
+.sepet-icerik textarea {
+    width: 100%;
+    height: 90px;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .08);
+    color: white;
+    resize: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.sepet-icerik textarea::placeholder {
+    color: rgba(255, 255, 255, .6);
+}
+
+/* ==========================================================================
+   YENİ: SEPET AKSİYON BUTON GRUBU (Araları açık, hareketsiz ve net)
+   ========================================================================== */
+.sepet-buton-grubu {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Boşluğu margin-bottom ile her butona özel yöneteceğiz */
+    margin-top: 20px;
+}
+
+.sepet-icerik button.btn-sepet-aksiyon {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #67d1ff, #b1d1f4);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 12px; /* ADIM 2: Butonların araları nizami açıldı */
+    transition: none; /* Üzerine gelindiğinde kıpırdamaması, zıplamaması için efektler kapatıldı */
+}
+
+/* Üzerine gelindiğinde zıplama/büyüme yok, sadece stabil tıklama hissi */
+.sepet-icerik button.btn-sepet-aksiyon:hover {
+    transform: none; 
+}
+.sepet-icerik button.btn-sepet-aksiyon:active {
+    transform: scale(0.98); 
+}
+
+/* Pembe Temalı Hesap İste Buton Stili */
+.sepet-icerik button.btn-hesap-iste {
+    background: linear-gradient(135deg, #ffafcc, #d97b9d);
+    margin-bottom: 12px;
+}
+
+/* Kapat Buton Stili (En Alttaki Butonun Boşluğu Sıfır) */
+.sepet-icerik button.btn-kapat {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 0; 
+}
+
+/* ==========================================================================
+   İLETİŞİM VE ANİMASYONLAR
+   ========================================================================== */
+.contact-cloud {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 40px;
+    border-radius: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid #d9eafa;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.contact-cloud p { 
+    font-weight: 700;
+    margin: 15px 0; 
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 0 10px;
+}
+
+@keyframes popup {
+    from { opacity: 0; transform: scale(.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* ==========================================================================
+   YENİ: KENDİLİĞİNDEN KAYBOLAN SEPET BİLDİRİMİ (TOAST)
+   ========================================================================== */
+.sepet-bildirim {
+    position: fixed;
+    top: 30px; /* Ekranın üst kısmında belirecek */
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px); /* Hafif yukarıdan aşağı süzülme efekti */
+    background: linear-gradient(135deg, #72d7ff, #d97b9d); /* Mavi-Pembe ortak teması */
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px; /* Tam yuvarlak modern bulut formu */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Tatlı bir yaylanma efekti */
+}
+
+/* Bildirim görünür olduğunda devreye girecek sınıf */
+.sepet-bildirim.goster {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
